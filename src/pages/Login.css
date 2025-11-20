@@ -1,0 +1,85 @@
+.login {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: black;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: normal;
+}
+
+.name {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    color:#6AE1DB;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.login-form {
+    display: flex;
+    padding: 40px;
+    justify-content: center;
+    background-color: #222222;
+    border-radius: 10px;
+    width: 400px;
+    height: 490px;
+    flex-direction: column;
+}
+
+.login-input label, .password-input label {
+    color: white;
+    text-align: left;
+    font-size: 18px;
+}
+
+.login-input, .password-input {
+    display: flex;
+    flex-direction: column;
+    padding: 1.55rem;
+}
+
+.login-input input, .password-input input {
+    height: 40px;
+    width: 100%;
+    font-size: 18px;
+}
+
+.login-button {
+    background-color: #6AE1DB;
+    width: 120px;
+    height: 50px;
+    padding: 10px;
+    margin-top: 25px;
+    color: black;
+    cursor: pointer;
+    align-self: center;
+}
+
+.login-button:hover {
+    background-color: black;
+    color: white;
+    border-color: #6AE1DB;
+    transition: all ease 0.4s;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+}
+
+.register-link a:hover {
+    color: #6AE1DB;
+}

@@ -1,4 +1,4 @@
-.playlist {
+.final-playlist {
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -33,15 +33,44 @@
 
 .collab-playlist-container, .my-playlist-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     background-color: #222222;
     color: white;
     border-radius: 10px;
     width: 600px;
     height: 150px;
-    font-size: 20px;
     align-items: center;
-    justify-content: center;
+    gap: 15px;
+}
+
+.collab-playlist-container img , .my-playlist-container img {
+    border-radius: 10px;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    font-weight: bold;
+    gap: 5px;
+    padding-right: 100px;
+    align-items: flex-start;
+}
+
+.description p {
+    margin: 0;
+    padding-right: 100px;
+}
+
+.view-more {
+    color: white;
+    font-size: 14px;
+    margin-top: 45px;
+}
+
+.view-more:hover {
+    color: #6AE1DB;
+    font-size: 14px;
 }
 
 .collab-header {
@@ -69,5 +98,4 @@ h3 {
     background-color: black;
     border: #6AE1DB 1px solid;
     color: white;
-    transition: all ease 0.4s;
 }

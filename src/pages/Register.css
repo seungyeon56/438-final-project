@@ -1,0 +1,84 @@
+.register {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: black;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 33px;
+    font-weight: normal;
+}
+
+.name {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    color:#6AE1DB;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.signup-form {
+    display: flex;
+    padding: 40px;
+    justify-content: center;
+    background-color: #222222;
+    border-radius: 10px;
+    width: 400px;
+    height: 500px;
+    flex-direction: column;
+}
+
+.email-info label, .password-info label, .confirm label {
+    color: white;
+    text-align: left;
+    font-size: 16px;
+}
+
+.email-info, .password-info, .confirm {
+    display: flex;
+    flex-direction: column;
+    padding: 1.55rem;
+}
+
+.email-info input, .password-info input, .confirm input {
+    height: 40px;
+    width: 100%;
+    font-size: 18px;
+}
+
+.signup-button {
+    background-color: #6AE1DB;
+    width: 120px;
+    height: 50px;
+    padding: 10px;
+    color: black;
+    cursor: pointer;
+    align-self: center;
+}
+
+.signup-button:hover {
+    background-color: black;
+    color: white;
+    border-color: #6AE1DB;
+    transition: all ease 0.4s;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+}
+
+.login-link a:hover {
+    color: #6AE1DB;
+}
