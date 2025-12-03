@@ -7,6 +7,9 @@ for this project.
 Here is the link to my demo video: 
 https://washington.zoom.us/rec/share/16ClgGmkT9PtMTFexzip8Lxz2TRR7fbs7C6Zt0QgguwVgONDN6N1zDSVYq01oLg.HnCAbaDbO5OYALNd?startTime=1764742881000
 
+Here is the link to deployed web app:
+https://final-project-85cf8.web.app/
+
 Technologies used
 I used Webstorm for the codes and Firebase for saving and loading the videos from the YouTube. 
 
