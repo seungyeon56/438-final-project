@@ -1,67 +1,49 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Navbar from '../components/Navbar/Navbar.jsx';
 import './AddSong.css';
-import {useNavigate} from "react-router-dom";
+import SearchSong from "../components/SearchSong/SearchSong.jsx";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from '../firebase/config';
 
 const AddSong = () => {
-    const navigate = useNavigate();
+    const [search, setSearch] = useState('');
+    const [query, setQuery] = useState('');
+    const [user, setUser] = useState(null);
 
+    useEffect(() => {
+        // authentication state change
+        const userStatus = onAuthStateChanged(auth, (user) => {
+            setUser(user); // updates the state once user is actually logged in
+        });
+        return () => userStatus();
+    }, []);
+
+    // track logged-in user
     const handleSubmit = (e) => {
         e.preventDefault();
-        navigate("/finalplaylist");
+        setQuery(search);
     };
 
     return (
         <div className="add-song">
+            <h2>Study & Work Playlist</h2>
             <Navbar/>
-
-            <form className="search-bar">
+            {/* create a search bar */}
+            <form className="search-bar" onSubmit={handleSubmit}>
                 <div className="search-song">
-                    <input type="text" id="song" placeholder="Song title"/>
+                    <input type="text" id="song" placeholder="Song title" value={search} onChange={(e) => setSearch(e.target.value)}/>
                     <button type="submit" className="search-button">Search</button>
                 </div>
             </form>
 
-            <div className="content">
-                <div className="results">
-                    <div className="result-container">
-                        <h3>Search Result</h3>
-                        <div className="album-cover">
-                            <img src="https://placehold.co/200x200" alt="album placeholder"/>
-                        </div>
+            <div className="results">
+                <h3>Search Result</h3>
 
-                        <div className="add-feature1">
-                            <button type="submit" className="add-to-my-playlist" onClick={handleSubmit}>Add to My Playlist</button>
-                        </div>
-
-                        <div className="add-feature2">
-                            <button type="submit" className="add-to-collab-playlist" onClick={handleSubmit}>Add to Collaborative Playlist</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="all-playlist">
-                    <div className="collab-playlist">
-                        <div className="collab-header">
-                            <h3>Collaborative Playlist</h3>
-                            <button className="invite-button">Invite Friends</button>
-                        </div>
-
-                        <div className="collab-playlist-container">
-                            <p>0 video</p>
-                        </div>
-                    </div>
-
-                    <div className="my-playlist">
-                        <h3>My Playlist</h3>
-                        <div className="my-playlist-container">
-                            <p>0 video</p>
-                        </div>
-                    </div>
-                </div>
+                {/* Render SearchSong function to show search results */}
+                {query && <SearchSong query={query} user={user} />}
             </div>
         </div>
-    )
+    );
 };
 
 export default AddSong;

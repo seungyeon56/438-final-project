@@ -1,28 +1,35 @@
 .navbar {
-    display: flex;
     position: fixed;
-    justify-content: flex-end;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 60px;
     padding: 10px;
-    align-items: center;
     background-color: #222222;
     z-index: 1000;
 }
 
+.nav-link {
+    justify-content: flex-end;
+    display: flex;
+    max-width: 100vw;
+    gap: 30px;
+    align-items: center;
+    margin-top: 10px;
+}
+
 .navbar .link, .navbar .last-link {
     color: lightgray;
-    margin-left: 60px;
-    font-size: 18px;
+    font-size: 20px;
+    font-family: 'Times New Roman', serif;
+    font-weight: bold;
+}
+
+.logout-button {
+    margin-right: 30px;
 }
 
 .navbar .link:hover, .navbar .last-link:hover {
     color: white;
     font-weight: bold;
-}
-
-.navbar .last-link {
-    margin-right: 100px;
 }
